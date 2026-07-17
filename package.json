@@ -1,14 +1,14 @@
 {
-  "name": "server",
+  "name": "studyNation",
   "version": "1.0.0",
-  "description": "",
+  "description": "StudyNation - Online Learning Platfrom",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ashadullah Haneef",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",

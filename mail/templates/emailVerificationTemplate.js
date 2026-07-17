@@ -1,8 +1,9 @@
-require("dotenv").config();
+const dotenv = require("dotenv")
+dotenv.config();
 
 
 const otpTemplate = (otp) => {
-  return `<!DOCTYPE html>
+	return `<!DOCTYPE html>
 	<html>
 	
 	<head>
@@ -69,9 +70,7 @@ const otpTemplate = (otp) => {
 	
 	<body>
 		<div class="container">
-		// <a href="https://studynotion-edtech-project.vercel.app"><img class="logo"
-		// 			src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNation Logo"></a>
-			<a href="${process.env.FRONTEND_URL}"><img class="logo"
+			<a href="${process.env.FRONTEND_URL}><img class="logo"
 					src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNation Logo"></a>
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
