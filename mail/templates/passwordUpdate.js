@@ -1,6 +1,3 @@
-const dotenv = require("dotenv")
-dotenv.config();
-
 exports.passwordUpdated = (email, name) => {
 	return `<!DOCTYPE html>
     <html>
@@ -58,8 +55,8 @@ exports.passwordUpdated = (email, name) => {
     
     <body>
         <div class="container">
-            <a href="${process.env.FRONTEND_URL}><img class="logo"
-                    src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNation Logo"></a>
+            <a href="http://localhost:3000"><img class="logo"
+                    src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNotion Logo"></a>
             <div class="message">Password Update Confirmation</div>
             <div class="body">
                 <p>Hey ${name},</p>
