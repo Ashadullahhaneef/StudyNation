@@ -9,9 +9,9 @@ exports.connect = () => {
 			useNewUrlparser: true,
 			useUnifiedTopology: true,
 		})
-		.then(console.log(`StudyNotion DB Connection Success`))
+		.then(console.log(`StudyNation DB Connection Success`))
 		.catch((err) => {
-			console.log(`StudyNotion DB Connection Failed`);
+			console.log(`StudyNation DB Connection Failed`);
 			console.log(err);
 			process.exit(1);
 		});

@@ -52,12 +52,12 @@ app.use("/api/v1/reach", contactUsRoute);
 app.get("/", (req, res) => {
 	return res.json({
 		success: true,
-		message: "Studynotion server is up and running ...",
+		message: "Studynation server is up and running ...",
 	});
 });
 
 // Listening to the server
 app.listen(PORT, () => {
-	console.log(`StudyNotion Server App is listening at ${PORT}`);
+	console.log(`StudyNation Server App is listening at ${PORT}`);
 });
 
