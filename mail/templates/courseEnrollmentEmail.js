@@ -1,3 +1,7 @@
+const dotenv = require("dotenv");
+
+dotenv.config()
+
 exports.courseEnrollmentEmail = (courseName, name) => {
   return `<!DOCTYPE html>
   <html>
@@ -67,7 +71,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
   
   <body>
       <div class="container">
-          <a href="http://localhost:3000"><img class="logo" src="https://i.ibb.co/7Xyj3PC/logo.png"
+          <a href="${process.env.FRONTEND_URL}"><img class="logo" src="https://i.ibb.co/7Xyj3PC/logo.png"
                   alt="StudyNotion Logo"></a>
           <div class="message">Course Registration Confirmation</div>
           <div class="body">

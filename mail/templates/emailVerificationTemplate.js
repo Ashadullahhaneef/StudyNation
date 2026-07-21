@@ -1,3 +1,7 @@
+const dotenv = require("dotenv");
+
+dotenv.config()
+
 const otpTemplate = (otp) => {
 	return `<!DOCTYPE html>
 	<html>
@@ -66,7 +70,7 @@ const otpTemplate = (otp) => {
 	
 	<body>
 		<div class="container">
-			<a href="http://localhost:3000"><img class="logo"
+			<a href="${process.env.FRONTEND_URL}"><img class="logo"
 					src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNotion Logo"></a>
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
