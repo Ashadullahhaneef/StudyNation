@@ -27,21 +27,59 @@
 
 // module.exports = mailSender
 
+// require("dotenv").config();
+
+// const mailSender = async (email, title, body) => {
+//   try {
+//     const response = await fetch("https://api.resend.com/emails", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+//       },
+//       body: JSON.stringify({
+//         from: "Studynation <onboarding@resend.dev>",
+//         to: [email],
+//         subject: title,
+//         html: body,
+//       }),
+//     });
+
+//     const data = await response.json();
+
+//     if (!response.ok) {
+//       throw new Error(data.message || "Failed to send email");
+//     }
+
+//     console.log("Email sent successfully, id:", data.id);
+//     return data;
+//   } catch (error) {
+//     console.log("mailSender error:", error.message);
+//     throw error; // pehle "return error.message" tha, jisse error chhup jaata tha —
+//     // "throw" se ab error upar tak sahi se pahunchta hai
+//   }
+// };
+
+// module.exports = mailSender;
+
 require("dotenv").config();
 
 const mailSender = async (email, title, body) => {
   try {
-    const response = await fetch("https://api.resend.com/emails", {
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        "api-key": process.env.BREVO_API_KEY,
       },
       body: JSON.stringify({
-        from: "Studynation <onboarding@resend.dev>",
-        to: [email],
+        sender: {
+          name: "studyNation",
+          email: "ashadullahhaneef@gmail.com",
+        },
+        to: [{ email: email }],
         subject: title,
-        html: body,
+        htmlContent: body,
       }),
     });
 
@@ -51,12 +89,11 @@ const mailSender = async (email, title, body) => {
       throw new Error(data.message || "Failed to send email");
     }
 
-    console.log("Email sent successfully, id:", data.id);
+    console.log("Email sent successfully:", data);
     return data;
   } catch (error) {
     console.log("mailSender error:", error.message);
-    throw error; // pehle "return error.message" tha, jisse error chhup jaata tha —
-    // "throw" se ab error upar tak sahi se pahunchta hai
+    throw error;
   }
 };
 
